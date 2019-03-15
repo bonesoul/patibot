@@ -1,2 +1,3 @@
 discord:
-  owner: ownerid
+  clientid: clientid
+  token: token

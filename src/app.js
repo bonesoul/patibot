@@ -4,6 +4,7 @@ require('app-module-path').addPath(__dirname);
 const config = require('config');
 const os = require('os');
 const winston = require('winston');
+const util = require('util');
 const packageInfo = require('../package.json');
 
 let startup = async () => {
@@ -18,6 +19,16 @@ let startup = async () => {
     winston.info(`[APP] node: ${process.versions.node}, v8: ${process.versions.v8}, uv: ${process.versions.uv}, openssl: ${process.versions.openssl}`);
     winston.info(`[APP] running over ${os.cpus().length} core system.`);
 
+    // ========================================
+    // add process signal handlers.
+    // ========================================
+    process.on('SIGTERM', gracefulExit);
+    process.on('SIGINT', gracefulExit);
+
+    // ========================================
+    // start the bot.
+    // ========================================
+    await require('./bot');
   } catch (err) {
     winston.error(`startup error: ${err}`);
   }
