@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/bonesoul/patibot#readme",
   "dependencies": {
-    "discord.js": "~11.4.2"
+    "config": "3.0.1",
+    "discord.js": "~11.4.2",
+    "discord.js-commando": "0.10.0",
+    "js-yaml": "3.12.2"
   }
 }
