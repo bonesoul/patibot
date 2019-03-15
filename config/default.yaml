@@ -1,3 +1,7 @@
 discord:
   clientid: clientid
   token: token
+
+api:
+  tenor:
+    key: key

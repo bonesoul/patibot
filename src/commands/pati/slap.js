@@ -1,22 +1,25 @@
 const commando = require('discord.js-commando');
 const oneLine = require('common-tags').oneLine;
+const tenor = require('lib/api/tenor');
 
 module.exports = class HelloCommand extends commando.Command {
 	constructor(client) {
 		super(client, {
-			name: 'selam',
-			aliases: ['naber'],
+			name: 'tokat',
+			aliases: ['vur'],
 			group: 'pati',
-			memberName: 'selam',
-			description: 'Selam verir.',
+			memberName: 'tokat',
+			description: 'Belirtilen patiye tokadı basar.',
 			details: oneLine`
-				Selam ver!
+				Tokat
 			`,
-			examples: ['selam'],
+			examples: ['tokat bonesoul'],
 		});
 	}
 
 	async run(msg, args) {
+		let test = await tenor.gif('anime slap');
+		console.dir(test);
 		return msg.reply(`sana da selam`);
 	}
 };

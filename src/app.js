@@ -25,6 +25,10 @@ let startup = async () => {
     process.on('SIGTERM', gracefulExit);
     process.on('SIGINT', gracefulExit);
 
+    let tenor = require('lib/api/tenor');
+    let test = await tenor.gif('anime slap');
+    console.dir(test);
+
     // ========================================
     // start the bot.
     // ========================================
