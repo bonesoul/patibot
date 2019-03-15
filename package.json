@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/bonesoul/patibot/issues"
   },
-  "homepage": "https://github.com/bonesoul/patibot#readme"
+  "homepage": "https://github.com/bonesoul/patibot#readme",
+  "dependencies": {
+    "discord.js": "~11.4.2"
+  }
 }
