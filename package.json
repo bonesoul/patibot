@@ -2,7 +2,7 @@
   "name": "patibot",
   "version": "0.0.1",
   "description": "a discord bot for pati discord",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,15 +15,16 @@
     "bot"
   ],
   "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/bonesoul/patibot/issues"
   },
   "homepage": "https://github.com/bonesoul/patibot#readme",
   "dependencies": {
+    "app-module-path": "2.2.0",
     "config": "3.0.1",
-    "discord.js": "~11.4.2",
+    "discord.js": "11.4.2",
     "discord.js-commando": "0.10.0",
-    "js-yaml": "3.12.2"
+    "js-yaml": "3.12.2",
+    "winston": "2.4.4"
   }
 }
