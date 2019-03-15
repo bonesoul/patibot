@@ -50,7 +50,7 @@ module.exports = (async () => {
     });
 
     client.registry
-      .registerGroup('math', 'Math')
+      .registerGroup('pati', 'Commands for pati')
       .registerDefaults()
       .registerTypesIn(path.join(__dirname, 'types'))
       .registerCommandsIn(path.join(__dirname, 'commands'));
