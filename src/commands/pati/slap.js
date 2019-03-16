@@ -3,11 +3,11 @@ const commando = require('discord.js-commando');
 const oneLine = require('common-tags').oneLine;
 const tenor = require('lib/api/tenor');
 
-module.exports = class HelloCommand extends commando.Command {
+module.exports = class SlapCommand extends commando.Command {
 	constructor(client) {
 		super(client, {
 			name: 'tokat',
-			aliases: ['kaphe', 'suslan'],
+			aliases: ['kahpe', 'suslan'],
 			group: 'pati',
 			memberName: 'tokat',
 			description: 'Belirtilen patiye tokadı basar.',
@@ -26,17 +26,21 @@ module.exports = class HelloCommand extends commando.Command {
 	}
 
 	async run(msg, args) {
-		const target = args.member;
+		const sender = msg.message.author; // the command sender.
+		const target = args.member; // the target user.
+		const channel = msg.message.channel; // the channel action takes in.
+
+		// get a slap gif.
 		let gif = await tenor.gif('anime slap');
 
-		console.dir(msg);
-
+		// create a new embed.
 		let embed = new Discord.RichEmbed()
-			.setTitle(`Bonesoul, ${target.user.username}'a tokadı basar:`)
+			.setTitle(`${sender.username}, ${target.user.username}'a tokadı basar:`)
 			.setDescription('Sus lan kaphe!')
 			.setImage(gif.gif.url)
 			.setColor('#0099ff');
 
-		return msg.replyEmbed(embed);
+		// send it to channel.
+		return channel.send(embed);
 	}
 };
