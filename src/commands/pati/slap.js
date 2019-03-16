@@ -36,7 +36,7 @@ module.exports = class SlapCommand extends commando.Command {
 		// create a new embed.
 		let embed = new Discord.RichEmbed()
 			.setTitle(`${sender.username}, ${target.user.username}'a tokadı basar:`)
-			.setDescription('Sus lan kaphe!')
+			.setDescription('Sus lan kahpe!')
 			.setImage(gif.gif.url)
 			.setColor('#0099ff');
 
