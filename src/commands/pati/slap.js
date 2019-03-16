@@ -11,7 +11,7 @@ module.exports = class HelloCommand extends commando.Command {
 			group: 'pati',
 			memberName: 'tokat',
 			description: 'Belirtilen patiye tokadı basar.',
-			details: oneLine`Belirtilen kullanıcıya tokatı basar.`,
+			details: oneLine`Amcık amcık konuşan patiye tokadı basmak için kullanılır.`,
 			examples: ['!tokat @amcik#1146'],
 			guildOnly: true,
 			args: [
@@ -32,7 +32,7 @@ module.exports = class HelloCommand extends commando.Command {
 		console.dir(msg);
 
 		let embed = new Discord.RichEmbed()
-			.setTitle(`Bonesoul, ${target.user.username}'a tokatı basar:`)
+			.setTitle(`Bonesoul, ${target.user.username}'a tokadı basar:`)
 			.setDescription('Sus lan kaphe!')
 			.setImage(gif.gif.url)
 			.setColor('#0099ff');
