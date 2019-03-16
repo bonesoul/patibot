@@ -1,2 +1,2 @@
 # patibot
-discord bot for pati discord server
+bot for pati discord server

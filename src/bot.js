@@ -1,3 +1,9 @@
+//
+//     patibot
+//     paticik discord, http://forum.paticik.com
+//
+'use strict';
+
 const commando = require('discord.js-commando');
 const config = require('config');
 const winston = require('winston');

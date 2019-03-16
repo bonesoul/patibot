@@ -6,7 +6,10 @@ const _ = require('lodash');
 
 exports.gif = async (terms) => {
   try {
-    let data = await _call(`search`, {q: terms});
+    let data = await _call(`search`, {
+      q: terms,
+      media_filter: 'minimal'
+    });
     if (data.error) throw new Error(data.error);
 
     let random = data.results[Math.floor(Math.random() * data.results.length)];

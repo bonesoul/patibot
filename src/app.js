@@ -1,4 +1,8 @@
+//
 //     patibot
+//     paticik discord, http://forum.paticik.com
+//
+'use strict';
 
 require('app-module-path').addPath(__dirname);
 const os = require('os');

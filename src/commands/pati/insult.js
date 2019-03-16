@@ -9,22 +9,22 @@ const commando = require('discord.js-commando');
 const oneLine = require('common-tags').oneLine;
 const tenor = require('lib/api/tenor');
 
-module.exports = class SlapCommand extends commando.Command {
+module.exports = class InsultCommand extends commando.Command {
 	constructor(client) {
 		super(client, {
-			name: 'tokat',
-			aliases: ['kahpe', 'suslan'],
+			name: 'hakaret',
+			aliases: ['asagila', 'sov'],
 			group: 'pati',
-			memberName: 'tokat',
-			description: 'Belirtilen patiye tokadı basar.',
-			details: oneLine`Amcık amcık konuşan patiye tokadı basmak için kullanılır.`,
-			examples: ['!tokat @amcik#1146'],
+			memberName: 'hakaret',
+			description: 'Belirtilen patiye hakaret eder.',
+			details: oneLine`Canınızı sıkan patiye hakaret edip sövmek için rahat rahat kullanabilirsiniz.`,
+			examples: ['!hakaret @amcik#1146'],
 			guildOnly: true,
 			args: [
 				{
 					key: 'member',
 					label: 'user',
-					prompt: 'Tokatın vurulacağı kullanıcı',
+					prompt: 'Sövülecek kullanıcı',
 					type: 'member'
 				}
 			]
@@ -37,12 +37,11 @@ module.exports = class SlapCommand extends commando.Command {
 		const channel = msg.message.channel; // the channel action takes in.
 
 		// get a slap gif.
-		let gif = await tenor.gif('anime slap');
+		let gif = await tenor.gif('anime insult');
 
 		// create a new embed.
 		let embed = new Discord.RichEmbed()
-			.setTitle(`${sender.username}, ${target.user.username}'a tokadı basar:`)
-			.setDescription('Sus lan kahpe!')
+			.setTitle(`${sender.username}, ${target.user.username}'a der ki:`)
 			.setImage(gif.gif.url)
 			.setColor('#FAA61A');
 
