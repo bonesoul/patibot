@@ -5,8 +5,8 @@ const path = require('path');
 
 module.exports = (async () => {
   const client = new commando.Client({
-    owner: config.get('discord.clientid'),
-    commandPrefix: '!'
+    owner: config.discord.clientid,
+    commandPrefix: config.bot.prefix
   })
 
   client
@@ -55,5 +55,5 @@ module.exports = (async () => {
       .registerTypesIn(path.join(__dirname, 'types'))
       .registerCommandsIn(path.join(__dirname, 'commands'));
 
-  await client.login(config.get('discord.token'));
+  await client.login(config.discord.token);
 })();

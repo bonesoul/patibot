@@ -4,13 +4,15 @@ const qs = require('qs');
 const request = require('request-promise');
 const _ = require('lodash');
 
-exports.gif = async (q) => {
+exports.gif = async (terms) => {
   try {
-    let data = await _call(`search`, {q: q});
-    let first = _.first(data.results);
-    return first;
+    let data = await _call(`search`, {q: terms});
+    if (data.error) throw new Error(data.error);
+
+    let random = data.results[Math.floor(Math.random() * data.results.length)];
+    return _.first(random.media);
   } catch (err) {
-    throw new Error(err);
+    throw err;
   }
 };
 
@@ -26,7 +28,7 @@ let _call = async (method, params) => {
       url: `https://api.tenor.com/v1/${method}/?${queryString}`,
       method: 'GET',
       json: true,
-      timeout: 10 * 1000 // in miliseconds
+      timeout: config.api.timeout
     };
 
     let response = await request(options);

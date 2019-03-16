@@ -1,7 +1,6 @@
 //     patibot
 
 require('app-module-path').addPath(__dirname);
-const config = require('config');
 const os = require('os');
 const winston = require('winston');
 const util = require('util');
@@ -24,10 +23,6 @@ let startup = async () => {
     // ========================================
     process.on('SIGTERM', gracefulExit);
     process.on('SIGINT', gracefulExit);
-
-    let tenor = require('lib/api/tenor');
-    let test = await tenor.gif('anime slap');
-    console.dir(test);
 
     // ========================================
     // start the bot.
