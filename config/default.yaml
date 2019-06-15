@@ -1,0 +1,11 @@
+bot:
+  prefix: "!"
+
+discord:
+  clientid: clientid
+  token: token
+
+api:
+  timeout: 2000
+  tenor:
+    key: key
